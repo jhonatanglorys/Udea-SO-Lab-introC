@@ -7,16 +7,28 @@ int mayor(int num1, int num2);
 int menor(int num1, int num2);
 
 int main(){
-    int resultado, intentos;
+    char *correctas[4];
+    correctas[0]="Muy bien!";
+    correctas[1]="Excelente!";
+    correctas[2]="Buen trabajo!";
+    correctas[3]="Sigue haciéndolo bien!";
+    char *incorrectas[4];
+    incorrectas[0]="No. Por favor trata de nuevo.";
+    incorrectas[1]="Incorrecto. Trata una vez más.";
+    incorrectas[2]="No te rindas!";
+    incorrectas[3]="No. Trata de nuevo";
+    int resultado, intentos, mensaje;
     intentos=0;
     srand(time(NULL)); //genera la semilla
     int op1, op2, salir;
     op1 = generar_aleatorios(1,10);
     op2 = generar_aleatorios(1,10);
+    mensaje=generar_aleatorios(0,3);
     printf("¿Cuánto es %d veces %d?", op1, op2);
     scanf("%d", &resultado);
     while(resultado != (op1*op2)){
-        printf("No. Por favor intenta nuevamente");
+        printf(incorrectas[mensaje]);
+        mensaje=generar_aleatorios(0,3);
         scanf("%d", &resultado);
         intentos++;
         if (intentos>4){
@@ -27,7 +39,7 @@ int main(){
             }
         }
     }
-    printf("Muy bien!");
+    printf(correctas[mensaje]);
     return 0;
 }
 
