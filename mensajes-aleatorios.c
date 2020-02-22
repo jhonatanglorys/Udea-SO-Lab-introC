@@ -6,10 +6,10 @@ int generar_aleatorios(int num1, int num2);
 int mayor(int num1, int num2);
 int menor(int num1, int num2);
 char mostrarMensaje(int posicion, char arreglo[]);
-char *correctas[4];
-char *incorrectas[4];
+
 int main(){
-    
+    char *correctas[4];
+    char *incorrectas[4];
     correctas[0]="Muy bien!";
     correctas[1]="Excelente!";
     correctas[2]="Buen trabajo!";
@@ -32,7 +32,24 @@ int main(){
     while(resultado != (op1*op2)){
         //temp = mostrarMensaje(mensaje,incorrectas);
         mensaje=generar_aleatorios(0,3);
-        printf(mostrarMensaje(mensaje,incorrectas));
+        //printf(mostrarMensaje(mensaje,incorrectas));
+        switch (mensaje)
+        {
+            case 0:
+                printf(incorrectas[0]);
+                break;
+            case 1:
+                printf(incorrectas[1]);
+                break;
+            case 2:
+                printf(incorrectas[2]);
+                break;
+            case 3:
+                printf(incorrectas[3]);
+                break;
+            default:
+                break;
+        }
         //printf(incorrectas[mensaje]);
         scanf("%d", &resultado);
         intentos++;
@@ -44,9 +61,24 @@ int main(){
             }
         }
     }
-    //temp = mostrarMensaje(mensaje,correctas);
-    printf(mostrarMensaje(mensaje,correctas));
-    //printf(correctas[mensaje]);
+    mensaje=generar_aleatorios(0,3);
+        switch (mensaje)
+        {
+            case 0:
+                printf(correctas[0]);
+                break;
+            case 1:
+                printf(correctas[1]);
+                break;
+            case 2:
+                printf(correctas[2]);
+                break;
+            case 3:
+                printf(correctas[3]);
+                break;
+            default:
+                break;
+        }
     return 0;
 }
 
@@ -78,19 +110,19 @@ int menor(int num1, int num2) {
 char mostrarMensaje(int posicion, char arreglo[]){
     switch (posicion)
     {
-        case 0:
+        case '0':
         return arreglo[0];
         break;
 
-        case 1:
+        case '1':
         return arreglo[1];
         break;
 
-        case 2:
+        case '2':
         return arreglo[2];
         break;
 
-        case 3:
+        case '3':
         return arreglo[3];
         break;
     
