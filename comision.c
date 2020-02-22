@@ -19,6 +19,6 @@ int main(){
         comision= (aux*0.1) + 3100;
     }
 
-    printf("La comision es de : %f", comision);
+    printf("La comision es de : %f\n", comision);
     return(0);
 }

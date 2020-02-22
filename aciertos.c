@@ -18,7 +18,8 @@ int main(){
     incorrectas[1]="Incorrecto. Trata una vez más.";
     incorrectas[2]="No te rindas!";
     incorrectas[3]="No. Trata de nuevo";
-    int resultado, intentos, mensaje;
+    int resultado, intentos, mensaje, aciertos;
+    aciertos=0;
     char temp;
     intentos=0;
     srand(time(NULL)); //genera la semilla
@@ -52,7 +53,7 @@ int main(){
         //printf(incorrectas[mensaje]);
         scanf("%d", &resultado);
         intentos++;
-        if (intentos>4){
+        if (intentos>5){
             printf("Presiona 0 si quieres dejar de intentar o cualquier otro número para continuar.");
             scanf("%d", &salir);
             if(salir==0){
